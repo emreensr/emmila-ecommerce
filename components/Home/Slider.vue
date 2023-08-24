@@ -1,0 +1,115 @@
+<template>
+  <client-only>
+    <Swiper
+    :modules="[
+      SwiperAutoplay,
+      SwiperEffectCreative,
+      SwiperPagination,
+      SwiperNavigation,
+    ]"
+    :slides-per-view="1"
+    :breakpoints="{
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 1,
+      },
+    }"
+    :loop="true"
+    :autoplay="{ delay: 5000, disableOnInteraction: false }"
+    :pagination="{
+      clickable: true,
+      bulletClass: 'swiper-bullet',
+      bulletActiveClass: 'swiper-bullet-active',
+    }"
+    :navigation="{
+      clickable: true,
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }"
+  >
+    <swiper-slide v-if="!isMobile" class="relative" v-for="photo in swiperData" :key="photo.id">
+      <img class="h-custom w-full object-cover" :src="photo.img" />
+    </swiper-slide>
+      <swiper-slide v-if="isMobile" class="relative" v-for="photo in mobileSwiperData" :key="photo.id">
+        <img class="h-custom w-full object-cover" :src="photo.img" />
+      </swiper-slide>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </Swiper>
+  </client-only>
+</template>
+
+<script setup>
+const swiperData = ref([
+  {
+    id:1,
+    img: "https://cdn.myikas.com/images/theme-images/512a2c80-abef-43ab-a545-7cdc468d4339/image_2560.webp",
+  },
+  {
+    id:2,
+    img: "https://cdn.myikas.com/images/theme-images/512a2c80-abef-43ab-a545-7cdc468d4339/image_2560.webp",
+  },
+  {
+    id:3,
+    img: "https://cdn.myikas.com/images/theme-images/512a2c80-abef-43ab-a545-7cdc468d4339/image_2560.webp",
+  },
+]);
+
+const mobileSwiperData = ref([
+  {
+    id:1,
+    img: "https://cdn.myikas.com/images/theme-images/747748bb-8140-4216-8d88-3fd4de135761/image_720.webp",
+  },
+  {
+    id:2,
+    img: "https://cdn.myikas.com/images/theme-images/747748bb-8140-4216-8d88-3fd4de135761/image_720.webp",
+  },
+  {
+    id:3,
+    img: "https://cdn.myikas.com/images/theme-images/747748bb-8140-4216-8d88-3fd4de135761/image_720.webp",
+  },
+]);
+
+const isMobile = ref(false);
+
+watchEffect(() => {
+  if (process.client) {
+
+  isMobile.value = window.innerWidth <= 768; 
+
+  window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth <= 768; 
+  });
+}
+});
+console.log(isMobile.value);
+</script>
+
+<style lang="scss">
+.swiper-pagination-bullets {
+  @apply flex justify-center lg:pb-12 space-x-4 items-center w-full;
+
+  .swiper-bullet {
+    @apply bg-white h-2 w-2 cursor-pointer rounded-full mt-10;
+  }
+
+  .swiper-bullet-active {
+    @apply bg-[#010C20] lg:w-10 w-7;
+  }
+}
+
+.swiper-button-prev {
+  @apply bg-black text-white w-10 h-12 rounded-lg;
+}
+.swiper-button-next {
+  @apply bg-black text-white w-10 h-12 px-3 rounded-lg;
+}
+.h-custom {
+  max-height: calc(100vh - 125px);
+}
+</style>
