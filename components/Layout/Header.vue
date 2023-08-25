@@ -1,4 +1,8 @@
 <template>
+
+    <LayoutOffCanvasCart v-if="isOpen" :isOpen="isOpen" :closeCart="openCartToggle" />
+
+
   <transition mode="out-in" enter-active-class="transition duration-300 transform"
     enter-from-class="opacity-0 translate-x-[-100%]" enter-to-class="opacity-100 translate-x-0"
     leave-active-class="transition duration-300 transform" leave-from-class="opacity-100 translate-x-0"
@@ -47,7 +51,7 @@
           </g>
         </svg>
       </div>
-      <div class="relative">
+      <div class="relative cursor-pointer" @click="openCartToggle">
         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="#000000ff" height="25"
           width="25" xmlns="http://www.w3.org/2000/svg" style="color: rgb(0, 0, 0)">
           <g>
@@ -93,31 +97,38 @@
 
 <script setup>
 
+const isOpen = ref(false)
+
+const openCartToggle = () => {
+  isOpen.value = !isOpen.value;
+}
+
+
 const products = ref([
   {
-    id:1,
-    name:"emmila",
-    slug:"emmila"
+    id: 1,
+    name: "emmila",
+    slug: "emmila"
   },
   {
-    id:2,
-    name:"Telefon Kılıfı",
-    slug:"telefon-kilifi"
+    id: 2,
+    name: "Telefon Kılıfı",
+    slug: "telefon-kilifi"
   },
   {
-    id:3,
-    name:"çanta",
-    slug:"canta"
+    id: 3,
+    name: "çanta",
+    slug: "canta"
   },
   {
-    id:4,
-    name:"cüzdan",
-    slug:"cuzdan"
+    id: 4,
+    name: "cüzdan",
+    slug: "cuzdan"
   },
   {
-    id:5,
-    name:"kemer",
-    slug:"kemer"
+    id: 5,
+    name: "kemer",
+    slug: "kemer"
   }
 ]
 )

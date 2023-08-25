@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto max-w-7xl lg:pt-24 pt:12 px-3">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto max-w-7xl lg:pt-20 pt:12 px-3">
             <div class="col-span-1">
                 <div class="flex items-center space-x-2 mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 512 512">
@@ -131,7 +131,7 @@
                         <h3 class="font-bold my-2">{{product.name}}</h3>
                         <p class="font-bold text-xl">{{product.price}}₺</p>
                     </div>
-                    <p class="text-md">{{product.description}}</p>
+                    <p class="text-sm">{{product.description}}</p>
                 </div>
             </div>
         </div>
