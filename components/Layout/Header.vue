@@ -2,7 +2,6 @@
 
     <LayoutOffCanvasCart v-if="isOpen" :isOpen="isOpen" :closeCart="openCartToggle" />
 
-
   <transition mode="out-in" enter-active-class="transition duration-300 transform"
     enter-from-class="opacity-0 translate-x-[-100%]" enter-to-class="opacity-100 translate-x-0"
     leave-active-class="transition duration-300 transform" leave-from-class="opacity-100 translate-x-0"
@@ -25,7 +24,10 @@
     </div>
     <div class="hidden md:block">
       <ul class="flex space-x-4 text-md uppercase">
-        <nuxt-link :to="`/${product.slug}`" v-for="product in products">{{ product.name }}</nuxt-link>
+        <li v-for="product in products" :key="product.id"
+        > 
+          <nuxt-link :to="`/${product.slug}`">{{ product.name }}</nuxt-link>
+        </li>
       </ul>
     </div>
     <div class="flex space-x-5">
