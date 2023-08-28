@@ -1,6 +1,7 @@
 <template>
   <client-only>
     <Swiper
+      class="first-swiper"
       :modules="[
         SwiperAutoplay,
         SwiperEffectCreative,
@@ -148,7 +149,7 @@ console.log(isMobile.value);
   }
 }
 
-.swiper-button-prev {
+.first-swiper .swiper-button-prev {
   left: 38px !important;
   background-repeat: no-repeat;
   background-color: black;
@@ -158,7 +159,7 @@ console.log(isMobile.value);
   height: 48px;
 }
 
-.swiper-button-next {
+.first-swiper .swiper-button-next {
   right: 38px !important;
   width: 48px;
   height: 48px;
@@ -168,18 +169,18 @@ console.log(isMobile.value);
   padding: 5px;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.first-swiper .swiper-button-next::after,
+.first-swiper .swiper-button-prev::after {
   content: "";
   display: none;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 375px) {
-  .swiper-button-prev {
+  .first-swiper .swiper-button-prev {
     display: none;
   }
 
-  .swiper-button-next {
+  .first-swiper .swiper-button-next {
     display: none;
   }
 }

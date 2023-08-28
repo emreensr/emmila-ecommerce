@@ -2,50 +2,103 @@
     <div>
         <div class="grid grid-cols-1 lg:grid-cols-6 gap-5 mx-auto max-w-8xl lg:pt-20 pt:12 px-3">
             <div class="col-span-1">
-                <div class="h-30 w-30">
-                    <img src="https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp"
-                        class="object-cover" />
-                </div>
+                <client-only>
+                    <Swiper
+                        class="vertical-swiper"
+                        :modules="[
+                            SwiperAutoplay,
+                            SwiperEffectCreative,
+                            SwiperNavigation,
+                        ]"
+                        :slides-per-view="1"
+                        :space-between="0"
+                        :direction="'vertical'"
+                        :breakpoints="{
+                            640: {
+                            slidesPerView: 1,
+                            },
+                            768: {
+                            slidesPerView: 1,
+                            },
+                            1024: {
+                            slidesPerView: 1,
+                            },
+                        }"
+                        :loop="true"
+                        :autoplay="{ delay: 5000, disableOnInteraction: false }"
+                        :navigation="{
+                            clickable: true,
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }"
+                        >
+                        <swiper-slide v-if="!isMobile" class="relative" v-for="photo in productImages" :key="photo.id">
+                            <img class="w-full object-cover" :src="photo.img" />
+                        </swiper-slide>
+                        <div class="swiper-button-next">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#fff"
+                                 xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9 13.887l5-5V8.18l-5-5-.707.707 4.146 4.147H2v1h10.44L8.292 13.18l.707.707z"></path>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#fff"
+                             xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7 3.093l-5 5V8.8l5 5 .707-.707-4.146-4.147H14v-1H3.56L7.708 3.8 7 3.093z"></path>
+                            </svg>
+                        </div>
+                    </Swiper>
+                </client-only>
             </div>
             <div class="col-span-3">
                 <client-only>
-    <Swiper
-    :modules="[
-      SwiperAutoplay,
-      SwiperEffectCreative,
-      SwiperNavigation,
-    ]"
-    :slides-per-view="1"
-    :breakpoints="{
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      1024: {
-        slidesPerView: 1,
-      },
-    }"
-    :loop="true"
-    :autoplay="{ delay: 5000, disableOnInteraction: false }"
-    :navigation="{
-      clickable: true,
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }"
-  >
-    <swiper-slide v-if="!isMobile" class="relative" v-for="photo in productImages" :key="photo.id">
-      <img class="h-custom w-full object-cover" :src="photo.img" />
-    </swiper-slide>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </Swiper>
-  </client-only>
-                <div class="">
-                    <img src="https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp"
-                        class="object-cover w-full" />
-                </div>
+                    <Swiper
+                        :modules="[
+                            SwiperAutoplay,
+                            SwiperEffectCreative,
+                            SwiperNavigation,
+                        ]"
+                        :slides-per-view="1"
+                        :breakpoints="{
+                            640: {
+                            slidesPerView: 1,
+                            },
+                            768: {
+                            slidesPerView: 1,
+                            },
+                            1024: {
+                            slidesPerView: 1,
+                            },
+                        }"
+                        :loop="true"
+                        :autoplay="{ delay: 5000, disableOnInteraction: false }"
+                        :navigation="{
+                            clickable: true,
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }"
+                        >
+                        <swiper-slide v-if="!isMobile" class="relative" v-for="photo in productImages" :key="photo.id">
+                            <img class="h-custom w-full object-cover" :src="photo.img" />
+                        </swiper-slide>
+                        <div class="swiper-button-next">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#fff"
+                                 xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9 13.887l5-5V8.18l-5-5-.707.707 4.146 4.147H2v1h10.44L8.292 13.18l.707.707z"></path>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#fff"
+                             xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7 3.093l-5 5V8.8l5 5 .707-.707-4.146-4.147H14v-1H3.56L7.708 3.8 7 3.093z"></path>
+                            </svg>
+                        </div>
+                    </Swiper>
+                </client-only>
             </div>
             <div class="col-span-2">
                 <div class="flex justify-between">
@@ -92,7 +145,8 @@
                         <button type="button" @click="toggleDescription"
                             class="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500"
                             aria-controls="filter-section-mobile-0" aria-expanded="false">
-                            <span class="font-medium text-gray-900 hover:underline hover:underline-offset-1">Ürün Açıklaması</span>
+                            <span class="font-medium text-gray-900 hover:underline hover:underline-offset-1">Ürün
+                                Açıklaması</span>
                             <span class="ml-6 flex items-center transform duration-300 relative">
                                 <div class="w-3 bg-gray-400 h-0.5">
                                 </div>
@@ -109,18 +163,20 @@
                         <div v-if="showDescription" class="pt-5 overflow-y-hidden" id="filter-section-mobile-0">
                             <div class="space-y-4">
                                 <div class="flex items-center">
-                                    <p>Pels Basic Pouch, Pels Side Pocket Crossbody iPhone kılıfınız için mükemmel bir
+                                    <p class="text-sm">Pels Basic Pouch, Pels Side Pocket Crossbody iPhone kılıfınız için mükemmel bir
                                         eklentidir. Pasaportunuz, anahtarınız, makyaj malzemeniz, not defteriniz ve çok daha
-                                        fazlası için sahip olunması gereken bir el çantasıdır. Halkaları sayesinde Pels Side
+                                        fazlası için sahip olunması gereken bir el çantasıdır.<br> Halkaları sayesinde Pels Side
                                         Pocket Crossbody iPhone kılıfınıza kolayca eklenebilir. İster tek başına elinizde ya
                                         da çantanızın içinde cüzdan olarak, ister kılıfınızla birlikte kullanabilme şansına
-                                        sahipsiniz.
-                                        İhtiyacın olan her şey yanında!
+                                        sahipsiniz.<br>
+                                        İhtiyacın olan her şey yanında!<br>
                                         Ürün Özellikleri:
-                                        Ölçüler: 20 X 12 X 1 cm
-                                        Orjinal Deri
-                                        Astar: Siyah Polyester Astar
-                                        Gümüş aksesuar
+                                        <ul>
+                                            <li>Ölçüler: 20 X 12 X 1 cm</li>
+                                            <li>Orjinal Deri</li>
+                                            <li> Astar: Siyah Polyester Astar</li>
+                                            <li>Gümüş aksesuar</li>
+                                        </ul>
                                         El çantası olarak ya da Pels Side Pocket Crossbody telefon kılıfınıza eklenti olarak
                                         kullanılabilir.
                                         *Askı dahil değildir.</p>
@@ -143,31 +199,71 @@ const toggleDescription = () => {
 }
 
 const productImages = ref([
-  {
-    id:1,
-    img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
-  },
-  {
-    id:2,
-    img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
-  },
-  {
-    id:3,
-    img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
-  },
+    {
+        id: 1,
+        img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
+    },
+    {
+        id: 2,
+        img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
+    },
+    {
+        id: 3,
+        img: "https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/abe2a1c7-1893-44a1-93fd-d36a65cf633e/image_540.webp",
+    },
 ]);
 </script>
 
-
 <style lang="scss">
+.swiper-button-prev {
+    left: 10px !important;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-radius: 5px;
+    width: 40px;
+    padding: 5px;
+    height: 40px;
+}
 
+.swiper-button-next {
+    right: 10px !important;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: "";
+    display: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 375px) {
     .swiper-button-prev {
-    @apply bg-black text-white w-10 h-12 rounded-lg;
+        display: none;
     }
+
     .swiper-button-next {
-    @apply bg-black text-white w-10 h-12 px-3 rounded-lg;
+        display: none;
     }
-    .h-custom {
+}
+
+.vertical-swiper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.vertical-swiper img {
+  max-height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+.h-custom {
     max-height: calc(100vh - 125px);
-    }
+}
 </style>
