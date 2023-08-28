@@ -21,7 +21,7 @@
               src="https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/2232e708-e761-460c-9940-a218dd48883f/image_720.webp"
             />
             <button
-              class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 mx-4 py-3 left-0 bg-black text-sm font-semibold text-white"
+              class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 md:mx-4 mx-2 py-3 left-0 bg-black text-sm font-semibold text-white"
             >
               SEPETE EKLE
             </button>
@@ -39,7 +39,7 @@
               class="hidden group-hover:block"
               src="https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/866f0fec-e6d9-4266-906b-eb824a15c08e/image_720.webp" />
             <button
-              class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 mx-4 py-3 left-0 bg-black text-sm font-semibold text-white"
+              class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 md:mx-4  mx-2 py-3 left-0 bg-black text-sm font-semibold text-white"
             >
               SEPETE EKLE
             </button>
@@ -57,7 +57,7 @@
                 class="hidden group-hover:block"
                 src="https://cdn.myikas.com/images/c92faa73-5650-4267-9e11-9aac520a912b/5772d770-a53a-4040-bdd9-ac17c07cb556/image_720.webp" />
               <button
-                class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 mx-4 py-3 left-0 bg-black text-sm font-semibold text-white"
+                class="absolute group-hover:opacity-100 opacity-0 transition duration-300 bottom-3 w-11/12 md:mx-4  mx-2 py-3 left-0 bg-black text-sm font-semibold text-white"
               >
                 SEPETE EKLE
               </button>
