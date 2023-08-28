@@ -119,7 +119,7 @@
                         leave-to-class="opacity-0 translate-y-[-10%]">
                         <div v-if="showDescription" class="pt-5 overflow-y-hidden" id="filter-section-mobile-0">
                             <div class="space-y-4">
-                                <div class="flex items-center">
+                                <div class="items-center">
                                     <p class="text-sm p-3">Pels Basic Pouch, Pels Side Pocket Crossbody iPhone kılıfınız için mükemmel bir
                                         eklentidir. Pasaportunuz, anahtarınız, makyaj malzemeniz, not defteriniz ve çok daha
                                         fazlası için sahip olunması gereken bir el çantasıdır.<br> Halkaları sayesinde Pels Side
@@ -127,15 +127,8 @@
                                         da çantanızın içinde cüzdan olarak, ister kılıfınızla birlikte kullanabilme şansına
                                         sahipsiniz.<br>
                                         İhtiyacın olan her şey yanında!<br>
-                                        Ürün Özellikleri:
-                                        <ul>
-                                            <li>Ölçüler: 20 X 12 X 1 cm</li>
-                                            <li>Orjinal Deri</li>
-                                            <li> Astar: Siyah Polyester Astar</li>
-                                            <li>Gümüş aksesuar</li>
-                                        </ul>
                                         El çantası olarak ya da Pels Side Pocket Crossbody telefon kılıfınıza eklenti olarak
-                                        kullanılabilir.
+                                        kullanılabilir.<br>
                                         *Askı dahil değildir.</p>
                                 </div>
                             </div>
