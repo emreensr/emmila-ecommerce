@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="grid grid-cols-1 lg:grid-cols-7 gap-5 mx-auto max-w-8xl lg:pt-12 mb-24 px-3">
+        <div class="grid grid-cols-1 lg:grid-cols-7 gap-5 mx-auto max-w-8xl lg:pt-12 mb-20 px-3">
             <div class="col-span-4">
                 <client-only>
                     <Swiper
@@ -97,10 +97,10 @@
                 <div>
                     <button class="bg-black p-3 w-full text-white font-bold mt-3">HEMEN AL</button>
                 </div>
-                <div class="border-t border-gray-200 mt-6 bg-[#f8f8f8] transform transition-all duration-300">
+                <div class="border-gray-200 mt-6 bg-[#fcfcfc] transform transition-all duration-300">
                     <h3 class="mx-1">
                         <button type="button" @click="toggleDescription"
-                            class="flex w-full items-center justify-between px-2 py-3 text-gray-400 hover:text-gray-500"
+                            class="flex w-full items-center justify-between px-2 py-3 text-[#fcfcfc] hover:text-[#fcfcfc]"
                             aria-controls="filter-section-mobile-0" aria-expanded="false">
                             <span class="font-medium text-gray-900 hover:underline hover:underline-offset-1">Ürün
                                 Açıklaması</span>

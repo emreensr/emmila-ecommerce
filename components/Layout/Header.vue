@@ -12,7 +12,7 @@
   <div class="w-full h-10 bg-black flex items-center justify-center">
     <h3 class="text-white font-semibold text-lg">#ALBİZDEN</h3>
   </div>
-  <div class="flex justify-between items-center py-5 lg:px-20 px-4">
+  <div class="flex justify-between items-center py-5 lg:px-28 px-8 shadow-lg bg-white sticky top-0 z-30">
     <div class="flex justify-center items-center gap-2">
       <svg @click="showMobileMenu = true" class="md:hidden cursor-pointer" stroke="currentColor" fill="currentColor"
         stroke-width="0" viewBox="0 0 20 20" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
@@ -22,11 +22,12 @@
       </svg>
       <nuxt-link :to="'/'" class="text-3xl lg:text-4xl capitalize font-mono">emmila</nuxt-link>
     </div>
-    <div class="hidden md:block">
-      <ul class="flex space-x-4 text-md uppercase">
-        <li v-for="product in products" :key="product.id"
+    <div class="hidden lg:block">
+      <ul class="flex space-x-5 text-md uppercase font-extralight">
+        <li v-for="product in products" :key="product.id" class="space-x-1"
         > 
           <nuxt-link :to="`/${product.slug}`">{{ product.name }}</nuxt-link>
+          <Icon name="material-symbols:keyboard-arrow-down" size="18" color="black" />
         </li>
       </ul>
     </div>
@@ -70,34 +71,40 @@
       </div>
     </div>
   </div>
-  <div class="w-full h-8 bg-black flex items-center justify-center">
-    <marquee scrollamount="3" class="text-white text-[14px] space-x-10" loop="infinite" behavior="alternate"
+  <div v-if="isIndexPage"
+       class="w-full md:h-8 h-7 bg-black flex items-center justify-center">
+    <marquee scrollamount="2" class="text-white text-[14px] md:text-[17px] space-x-7 md:space-x-10" loop="infinite" behavior="alternate"
       direction="left">
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
-      <span>500 TL ÜZERİ KARGO BEDAVA</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
+      <span>500 TL ve üzeri ücretsiz kargo</span>
     </marquee>
   </div>
 </template>
 
 <script setup>
+const route = useRoute();
+
+const isIndexPage = computed(() => {
+      return route.path === '/'
+    });
 
 const isOpen = ref(false)
 

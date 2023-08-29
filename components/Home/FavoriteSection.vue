@@ -8,7 +8,7 @@
     <div class="bg-[#f5f5f5] text-center">
       <h1 class="font-bold text-3xl py-12">EMMILA FAVORITES</h1>
       <div
-        class="grid grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl gap-5 p-3"
+        class="grid grid-cols-2 lg:grid-cols-3 mx-auto max-w-8xl gap-5 p-3"
       >
         <div class="group">
           <div class="relative group">

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-full h-full bg-white z-50">
+  <div class="fixed w-full h-full bg-white z-40">
     <div class="flex justify-between items-center p-5">
       <div class="flex space-x-3">
         <svg
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="p-5">
-      <ul class="space-y-6 uppercase">
+      <ul class="space-y-6 uppercase font-extralight">
         <li
           v-for="product in products"
           :key="product.id"

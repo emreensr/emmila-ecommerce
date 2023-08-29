@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto max-w-7xl lg:pt-20 pt:12 px-3">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 mx-auto max-w-7xl lg:pt-10 pt:12 mb-20 px-3">
             <div class="col-span-1">
                 <div class="flex items-center space-x-2 mt-5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 512 512">
@@ -112,10 +112,12 @@
                 </div>
             </div>
             <div class="grid col-span-1 grid-cols-2 lg:col-span-3 lg:grid-cols-3 gap-5">
-                <div class="relative" v-for="product in productData">
+                <div class="relative cursor-pointer" v-for="product in productData">
                     <span v-if="product.stock < 1" class="absolute top-o right-0 border p-1 bg-black text-white text-sm ">Tükendi</span>
+                    <nuxt-link :to="'/canta/emmila-basic-pouch-classic-grey'">
                     <img
                         :src="product.image" />
+                    </nuxt-link>
                     <button
                         class="transition duration-300 bottom-3 w-full py-3 left-0 bg-black text-sm font-semibold text-white" :class="product.stock < 1 && 'cursor-not-allowed bg-[#ececec] text-black'" :disabled="product.stock < 1">
                         <span v-if="product.stock > 0" 
