@@ -12,7 +12,7 @@
   <div class="w-full h-10 bg-black flex items-center justify-center">
     <h3 class="text-white font-semibold text-lg">#ALBİZDEN</h3>
   </div>
-  <div class="flex justify-between items-center py-5 lg:px-28 px-8 shadow-lg bg-white sticky top-0 z-30">
+  <div class="flex justify-between items-center py-5 lg:px-28 px-4 shadow-lg bg-white sticky top-0 z-30">
     <div class="flex justify-center items-center gap-2">
       <svg @click="showMobileMenu = true" class="md:hidden cursor-pointer" stroke="currentColor" fill="currentColor"
         stroke-width="0" viewBox="0 0 20 20" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
