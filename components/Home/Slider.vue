@@ -39,7 +39,7 @@
         v-for="photo in swiperData"
         :key="photo.id"
       >
-        <img class="h-custom w-full object-cover" :src="photo.img" />
+        <img class="w-full object-cover" :style="{height: `${remValue}rem`}" :src="photo.img" />
       </swiper-slide>
       <swiper-slide
         v-if="isMobile"
@@ -47,7 +47,7 @@
         v-for="photo in mobileSwiperData"
         :key="photo.id"
       >
-        <img class="h-custom w-full object-cover" :src="photo.img" />
+        <img class="w-full object-cover" :style="{height: `${remValue}rem`}" :src="photo.img" />
       </swiper-slide>
       <div class="swiper-button-next">
         <svg
@@ -133,12 +133,41 @@ watchEffect(() => {
     });
   }
 });
-console.log(isMobile.value);
+
+
+const remainingHeight = ref(null);
+const remValue = ref(100)
+
+const calculateRemainingHeight = () => {
+  remainingHeight.value = window.innerHeight;
+};
+
+onMounted(() => {
+  calculateRemainingHeight();
+  window.addEventListener('resize', calculateRemainingHeight);
+
+  
+  remValue.value = pixelToRem(remainingHeight.value)
+
+
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', calculateRemainingHeight);
+});
+
+
+function pixelToRem(pixelValue, baseFontSize = 16) {
+  const sonuc = (pixelValue/16)-9.50
+  return sonuc;
+}
+
+
 </script>
 
 <style lang="scss">
 .swiper-pagination-bullets {
-  @apply flex justify-center lg:pb-12 space-x-4 items-center w-full;
+  @apply flex justify-center mb-5 lg:pb-12 space-x-4 items-center w-full;
 
   .swiper-bullet {
     @apply bg-white h-2 w-2 cursor-pointer rounded-full mt-10;
@@ -185,7 +214,15 @@ console.log(isMobile.value);
   }
 }
 
-.h-custom {
-  max-height: calc(100vh - 125px);
+@media screen and (max-width: 767px) {
+  .h-custom {
+  height: calc(100vh - 9.5rem);
+  }
 }
+@media screen and (min-width: 767px) {
+  .h-custom {
+  height: calc(100vh - 9.5rem );
+  }
+}
+
 </style>

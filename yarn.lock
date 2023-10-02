@@ -323,6 +323,21 @@
     "@esbuild-kit/core-utils" "^3.0.0"
     get-tsconfig "^4.4.0"
 
+"@esbuild/win32-x64@0.17.19":
+  version "0.17.19"
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.17.19.tgz"
+  integrity sha512-lAhycmKnVOuRYNtRtatQR1LPQf2oYCkRGkSFnseDAKPl8lu5SOsK/e1sXe5a0Pc5kHIHe6P2I/ilntNv2xf3cA==
+
+"@esbuild/win32-x64@0.18.20":
+  version "0.18.20"
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.18.20.tgz"
+  integrity sha512-kTdfRcSiDfQca/y9QIkng02avJ+NCaQvrMejlsB3RRv5sE9rRoeBPISaZpKxHELzRxZyLvNts1P27W3wV+8geQ==
+
+"@esbuild/win32-x64@0.19.2":
+  version "0.19.2"
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.19.2.tgz"
+  integrity sha512-tcuhV7ncXBqbt/Ybf0IyrMcwVOAPDckMK9rXNHtF17UTK18OKLpg08glminN06pt2WCoALhXdLfSPbVvK/6fxw==
+
 "@hapi/hoek@^9.0.0":
   version "9.3.0"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
@@ -702,6 +717,11 @@
     is-glob "^4.0.3"
     micromatch "^4.0.5"
     napi-wasm "^1.1.0"
+
+"@parcel/watcher-win32-x64@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/@parcel/watcher-win32-x64/-/watcher-win32-x64-2.3.0.tgz"
+  integrity sha512-dLx+0XRdMnVI62kU3wbXvbIRhLck4aE28bIGKbRGS7BJNt54IIj9+c/Dkqb+7DJEbHUZAX1bwaoM8PqVlHJmCA==
 
 "@parcel/watcher@^2.1.0", "@parcel/watcher@^2.2.0":
   version "2.3.0"
