@@ -18,14 +18,14 @@
             </div>
             <div class="mt-10 w-full text-sm text-gray-300 flex flex-col items-center justify-center space-y-6 text-start">
                 <ul class="w-full px-5 space-y-6">
-                    <li class="flex items-center justify-start space-x-4">
+                    <NuxtLink to="/panel/dashboard" class="flex items-center justify-start space-x-4">
                         <Icon name="carbon:dashboard-reference" size=20 />
                         <h1 v-if="!isHiddenMenu">Dashboard</h1>
-                    </li>
-                    <li class="flex items-center justify-start space-x-4">
+                    </NuxtLink>
+                    <NuxtLink to="/panel/ecommerce" class="flex items-center justify-start space-x-4">
                         <Icon name="tdesign:cart" size=20 />
                         <h1 v-if="!isHiddenMenu">E-commerce</h1>
-                    </li>
+                    </NuxtLink>
                 </ul>
             </div>
             <div class="mt-auto pb-10 w-full text-sm text-gray-300 flex flex-col items-center justify-center space-y-6 text-start">
@@ -46,8 +46,9 @@
 
 <script setup>
     definePageMeta({
-        layout:'adminLayout'
+        layout:'adminLayout',
     })
+
 
     const isHiddenMenu = ref(false)
     function hideLeftMenu() {
