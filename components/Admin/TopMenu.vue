@@ -11,7 +11,8 @@
             <div @click="showMenu" class="w-10 h-10 cursor-pointer">
                 <img class="rounded-full" src="https://react-material.fusetheme.com/assets/images/avatars/brian-hughes.jpg" alt="">
             </div>
-            <div v-if="isShowMenu" class="absolute md:w-[180px] w-[120px] right-2 top-[43px] bg-white rounded-lg shadow-lg">
+            <div v-if="isShowMenu" 
+                class="absolute md:w-[180px] w-[120px] z-50 right-2 top-[43px] bg-white rounded-lg shadow-lg transition duration-600 ease-in-out">
                 <ul class="w-full py-1.5 text-start cursor-pointer">
                     <li class=" py-3 px-2 flex space-x-2 items-center">
                         <Icon name="ph:user" size="20"/>

@@ -8,7 +8,7 @@
                         <span class="block text-start"> Products </span>
                     </div>
                     <div class="flex space-x-4 items-center justify-center">
-                        <div class="bg-gray-200 w-10 h-12 items-center justify-center flex">
+                        <div class="bg-gray-200 w-10 h-12 items-center justify-center flex hidden md:block">
                             <img src="https://react-material.fusetheme.com/assets/images/apps/ecommerce/braies-lake.jpg"
                                 alt="">
                         </div>
@@ -20,11 +20,11 @@
                 </div>
                 <div class="flex items-center justify-center space-x-4">
                     <button
-                        class="flex justify-center items-center space-x-2 text-white bg-purple-500 bg-opacity-70 py-2 px-4 rounded-full shadow-md">
+                        class="flex justify-center items-center space-x-2 text-white bg-[#4f46e5] py-2 px-4 rounded-full shadow-md">
                         <Icon name="bi:trash" size="16" />
                         <span>Remove</span>
                     </button>
-                    <button class="py-2 px-4 flex justify-center items-center rounded-full bg-white shadow-md">
+                    <button class="py-2 px-4 flex justify-center items-center text-white rounded-full bg-[#4f46e5] shadow-md">
                         <span>
                             Save
                         </span>
@@ -69,10 +69,11 @@
                     </div>
                 </div>
                 <div v-if="selectedMenu === 2" class="lg:w-1/2 w-full space-y-3">
-                    <div class="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-4 gap-2">
-                        <div class="h-32 w-32 relative justify-center flex items-center rounded-xl border">
-                            <label
+                    <div class="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4 gap-3">
+                        <label
                             for="file-upload">
+                        <div class="h-32 w-32 relative justify-center flex items-center rounded-xl border cursor-pointer">
+                            
                                 <Icon name="tabler:upload" size="28" color="gray" />
                                 <input
                               id="file-upload"
@@ -80,11 +81,11 @@
                               type="file"
                               class="sr-only"
                             />
+                        </div>
                             </label>
                           
-                        </div>
                         <div v-for="(image, index) in images" :key="index"
-                            class="h-32 w-32 relative rounded-xl overflow-hidden"
+                            class="h-32 w-32 relative rounded-xl overflow-hidden cursor-pointer"
                             :class="image.isSelected ? 'shadow-3xl border' : 'shadow-sm border-none'"
                             @click="setMainPhoto(index, images)">
                             <Icon v-if="image.isSelected" class="absolute top-0 right-0" name="ic:outline-star" size="22"
